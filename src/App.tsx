@@ -8,24 +8,21 @@ import Forbidden from "./pages/Forbidden/Forbidden";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, 
+    element: <Layout />,
     children: [
       {
         path: "/",
         element: <Reception />,
       },
       {
-        path: "/floor/:index", 
-        
-        element: (
-          <PrivateRoute component={<Floor />} /> 
-        ),
+        path: "/floor/:index",
+
+        element: <PrivateRoute component={<Floor />} />,
       },
       {
         path: "/forbidden",
-        element: <Forbidden />, 
+        element: <Forbidden />,
       },
-      
     ],
   },
 ]);
