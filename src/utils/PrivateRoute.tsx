@@ -8,7 +8,7 @@ interface IPrivateRoute {
 
 const PrivateRoute = ({ component }: IPrivateRoute) => {
   const { index } = useParams<{ index: string }>();
-  const floorIndex = parseInt(index || "0");
+  const floorIndex = parseInt(index!);
 
   
   const floorAccess = useSelector(
@@ -24,14 +24,13 @@ const PrivateRoute = ({ component }: IPrivateRoute) => {
     if (floorIndex >= 0 && floorIndex < floorAccess.length) {
       setHasAccess(floorAccess[floorIndex]);
     }
-  }, [floorAccess, floorIndex]);
-
-  
-  useEffect(() => {
     if (!hasAccess) {
       navigate("/forbidden");
     }
-  }, [hasAccess, navigate]);
+  }, [floorAccess, floorIndex]);
+
+  
+ 
 
   
   if (hasAccess) {
