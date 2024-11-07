@@ -20,7 +20,7 @@ const useBuildingData = () => {
 
   const getFloorByIndex = (floorIndex: number): Floor | undefined => {
     //FILL HERE
-    // return buildingData[floorIndex];
+    return buildingData[floorIndex];
   };
   const getListOfActivities = (): string[] => {
     //FILL HERE
