@@ -24,7 +24,7 @@ const useBuildingData = () => {
   };
   const getListOfActivities = (): string[] => {
     //FILL HERE
-    // return buildingData.map((floor) => floor.activity);
+    return buildingData.map((floor) => floor.activity);
   };
   return {
     buildingData,
