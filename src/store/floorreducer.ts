@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 const initialState = {
-  floorAccess: [false, false, false, false, false]
+  floorAccess: [true, false, false, false, false]
 };
 
 
