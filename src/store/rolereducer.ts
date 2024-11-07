@@ -1,7 +1,6 @@
 //FILL HERE 3.2
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-const response = await fetch("../data/roles.json");
-const roles = await response.json();
+import roles from "../data/roles.json"
 
 const initialState = {
   currentRole: roles[0],
@@ -12,11 +11,14 @@ const roleSlice = createSlice({
   initialState,
   reducers: {
     setRole: (state, action: PayloadAction<number>) => {
-      const index = action.payload;
-      if (index >= 0 && index < roles.length) {
-        state.currentRole = roles[index];
-      }
+      
+        console.log("gyugy");
+        
+        state.currentRole = roles[action.payload];
+     
+      return state
     },
+    
   },
 });
 
